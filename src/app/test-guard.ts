@@ -1,5 +1,5 @@
 import { CanActivateFn } from '@angular/router';
 
-export const testGuard: CanActivateFn = (route, state) => {
+export const TestGuard: CanActivateFn = (route, state) => {
   return true;
 };
