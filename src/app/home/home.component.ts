@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { TestClassNoDecorator } from '../shared/test-class-no-decorator';
 import { TestValues } from '../shared/test-values';
 import { TestModel } from '../shared/test.model';
 
@@ -9,6 +10,11 @@ import { TestModel } from '../shared/test.model';
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   test: TestModel = { testId: TestValues.HomeTestId };
+  testClass: TestClassNoDecorator = new TestClassNoDecorator();
+
+  ngOnInit(): void {
+    console.log(this.testClass.testMethodNoDecorator());
+  }
 }
