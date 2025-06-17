@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TestValues } from '../shared/test-values';
+import { TestModel } from '../shared/test.model';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +9,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent { }
+export class HomeComponent {
+  test: TestModel = { testId: TestValues.HomeTestId };
+}
