@@ -10,6 +10,12 @@ function helper() {
   console.log('test-shared-component helper function');
 }
 
+export class TestSharedComponentHelper {
+  constructor() {
+    helper();
+  }
+}
+
 @Component({
   selector: 'app-test-shared-component',
   imports: [],
