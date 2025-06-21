@@ -7,10 +7,10 @@ import { TestModel } from '../shared/test.model';
   selector: 'app-home',
   imports: [],
   template: `<p>home works!</p>`,
-  styleUrl: './home.component.css',
+  styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
+export class Home implements OnInit {
   test: TestModel = { testId: TestValues.HomeTestId };
   testClass: TestClassNoDecorator = new TestClassNoDecorator();
 
