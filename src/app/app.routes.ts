@@ -10,5 +10,19 @@ export const routes: Routes = [
     canActivate: [testGuard],
     resolve: testResolver,
   },
+  {
+    path: 'test',
+    loadComponent: () =>
+      import('./shared/test-shared-component/test-shared-component').then(
+        (m) => m.TestSharedComponent
+      ),
+  },
+  {
+    path: 'test-different-filename',
+    loadComponent: () =>
+      import(
+        './shared/test-shared-component-different-filename/test-shared-component-different-filename'
+      ).then((m) => m.TestSharedComponentDifferent),
+  },
   { path: '**', redirectTo: '/home' },
 ];
